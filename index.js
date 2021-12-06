@@ -39,18 +39,21 @@ calcul.addEventListener("click", function () {
     else if (Number(input.value) < 0 || Number(input.value) > 100) {
         console.log("Le nombre enregistré n'est pas compris entre 0 et 100");
         resultat.innerHTML = "Le nombre enregistré n'est pas compris entre 0 et 100"
+        img.innerHTML = "..."
     }
 
     /* le nb rentré est supérieur au chiffre mystère*/
     else if (Number(input.value) > chiffremyst) {
         console.log("Le nombre enregistré est trop grand");
         resultat.innerHTML = "Le nombre enregistré est trop grand"
+        img.innerHTML = "..."
     }
 
     /* le nb rentré est inférieur au chiffre mystère*/
     else if (Number(input.value) < chiffremyst) {
         console.log("Le nombre enregistré est trop petit");
         resultat.innerHTML = "Le nombre enregistré est trop petit"
+        img.innerHTML = "..."
     }
     /* le nb rentré est égale au chiffre mystère c'est gagné*/
     else if (Number(input.value) === chiffremyst) {
@@ -59,9 +62,11 @@ calcul.addEventListener("click", function () {
         img.innerHTML = '<img src="https://harmodiatojazz.com/wp-content/uploads/2016/03/Fotolia_103260508_nikolas_jkd_canva_mini.jpg">'
         alert("Bien joué")
         ggWp()
+        
     } else {
         console.log("Une erreur est survenu!");
         resultat.innerHTML = "Une erreur est survenu !"
+        img.innerHTML = "..."
     }
 
 
