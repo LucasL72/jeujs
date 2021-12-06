@@ -26,38 +26,44 @@ calcul.addEventListener("click", function () {
     console.log('type: ', typeof Number(input.value), Number(input.value))
 
     /* Si le nb d'essai est écoulé */
-    if (essai === maxessai) {
+    if (essai >= maxessai) {
         console.log("Vous avez perdu, retentez votre chance");
+        alert("Vous avez perdu, retentez votre chance")
         tryAgain();
         return
     }
 
     /* le nb n'est pas compris entre 0 et 100 */
-    if (Number(input.value) < 0 || Number(input.value) > 100) {
+    else if (Number(input.value) < 0 || Number(input.value) > 100) {
         console.log("Le nombre enregistré n'est pas compris entre 0 et 100");
         resultat.innerHTML = "Le nombre enregistré n'est pas compris entre 0 et 100"
     }
 
     /* le nb rentré est supérieur au chiffre mystère*/
-    if (Number(input.value) > chiffremyst) {
+    else if (Number(input.value) > chiffremyst) {
         console.log("Le nombre enregistré est trop grand");
         resultat.innerHTML = "Le nombre enregistré est trop grand"
     }
 
     /* le nb rentré est inférieur au chiffre mystère*/
-    if (Number(input.value) < chiffremyst) {
+    else if (Number(input.value) < chiffremyst) {
         console.log("Le nombre enregistré est trop petit");
         resultat.innerHTML = "Le nombre enregistré est trop petit"
     }
     /* le nb rentré est égale au chiffre mystère c'est gagné*/
-    if (Number(input.value) === chiffremyst) {
+    else if (Number(input.value) === chiffremyst) {
         console.log("Vous avez trouvé la bonne réponse");
-        resultat.innerHTML="Vous avez trouvé la bonne réponse"
-        ggWp();
+        resultat.innerHTML = "Vous avez trouvé la bonne réponse"
+        alert("Bien joué")
+    } else {
+        console.log("Une erreur est survenu!");
+        resultat.innerHTML = "Une erreur est survenu !"
     }
+
+
     /* Incrémentation d'essai pour savoir le nb d'essais actifs */
     essai++
-    document.getElementById("nbtry").innerHTML = essai
+    document.getElementById("nbtry").innerHTML = "Nbr essai: " + essai
 
 })
 
